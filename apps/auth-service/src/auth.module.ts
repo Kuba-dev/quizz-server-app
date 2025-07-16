@@ -20,7 +20,6 @@ const { JwtSecret, JwtExpiration } = EnvAuth
     PassportModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '.env.auth',
       validationSchema: Joi.object({
         JWT_SECRET: Joi.string().required(),
         JWT_EXPIRATION: Joi.number().required(),
