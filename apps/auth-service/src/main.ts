@@ -1,10 +1,12 @@
 import { NestFactory } from '@nestjs/core'
-import { AuthServiceModule } from './auth-service.module'
+import { AuthModule } from './auth.module'
 
 async function bootstrap() {
-  const app = await NestFactory.create(AuthServiceModule)
+  const app = await NestFactory.create(AuthModule)
+
   await app.listen(process.env.port ?? 3001)
 }
+
 bootstrap().catch(err => {
   console.error('Error when starting the application:', err)
 })
